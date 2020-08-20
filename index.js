@@ -5,6 +5,10 @@ const cheerio = require('cheerio');
 
 const app = express();
 
+app.get("/",function(req,res){
+	res.send('<html><p>Please click the link <a href="https://latest5news.herokuapp.com/latestNews">https://latest5news.herokuapp.com/latestNews</a> to display latest 5 news from times.com</p></html>')
+})
+
 app.get("/latestNews",function(req,res){
 	request({uri: "https://time.com/"},function(error, response, body) {
 		if(error) {
